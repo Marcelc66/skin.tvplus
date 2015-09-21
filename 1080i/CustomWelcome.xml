@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="1122">
+  <defaultcontrol always="true">9000</defaultcontrol>
+  <controls>
+    <control type="group" description="All dialog content">
+      <control type="image" description="Top logo">
+      <centerleft>960</centerleft>
+        <top>0</top>
+        <width>511</width>
+        <height>142</height>
+				<align>top</align>
+      <texture>welcome/XACTTVLogoAstera.png</texture>
+    </control>
+		<control type="image" description="Bottom logo">
+      <centerleft>960</centerleft>
+        <bottom>129</bottom>
+        <width>59</width>
+        <height>48</height>
+				<align>top</align>
+      <texture>welcome/TVPlusDevilLogo.png</texture>
+    </control>
+		<control type="label" description="Bottom logo TXT">
+        <centerleft>960</centerleft>
+        <bottom>93</bottom>
+        <width>1920</width>
+        <height>30</height>
+        <label>Mr. “WICKED” Says</label>
+        <align>center</align>
+        <aligny>center</aligny>
+				<font>Support</font>
+		  </control>
+			<control type="label" description="Dialog heading">
+        <centerleft>960</centerleft>
+        <top>142</top>
+        <width>1920</width>
+        <height>50</height>
+        <label>[B]IMPORTANT CONSUMER INFORMATION[/B]</label>
+        <align>center</align>
+        <aligny>center</aligny>
+				<textcolor>Red</textcolor>
+      </control>
+      <control type="textbox" id="9" description="Labels">
+        <centerleft>960</centerleft>
+        <top>201</top>
+        <width>1800</width>
+        <height>660</height>
+        <align>justify</align>
+				<font>SupportSmall</font>
+				<shadowcolor>-</shadowcolor>
+        <label>Your TV PLUS Systems functionality is much like a personal computer that has unrestricted access to the internet and any and all the content thereof. As such we advise you that there are copyrighted TV Shows, Movies, Kids, Sports, Adult and every type of media imaginable accessible to the user of the TV PLUS System. As sold, the TV PLUS System is not configured to download, store or duplicate any media files and only streams network and/or internet content thus there are NEVER any copies or duplication made on your device or connected storage.[CR][CR]X ACT TV produces the TV PLUS Systems and is a technology integrator, distributer & reseller of “WICKED” Smart Home Media Streaming Systems for which the principal purpose is of a Smart TV Accessory, Personal Computing, Gaming as well as and not limited to Media Streaming of personal & legal content from legitimate internet sources for personal home viewing and as intended by the various providers. Furthermore please be mindful that Adult content is accessible via an internet connection and any minors should be supervised while using the TV PLUS System.[CR][CR]X ACT TV does not host, provide, archive, store, or distribute media of any kind to the exception of corporate marketing and X ACT University teaching materials and as such does not have any affiliation, involvement or participation with any media content host or provider. The TV PLUS System is not sold nor intended for commercial or public viewing use.[CR][CR]X ACT TV hereby advises it's clients and all potential users that it is entirely the responsibility of the consumer and/or user(s) to operate the system responsibly and accordance to the governing laws applicable in your specific region.[CR][CR]Be well advised that X ACT TV and/or it’s authorized Resellers will not discuss, support or provide any information by phone, email or via its website or otherwise regarding access to or the streaming/viewing of illegal or copyrighted media of any kind![CR][CR]I agree by acceptance hereof, the Consumer and/or User(s) of the TV PLUS System will hold harmless X ACT TV, it’s Authorized Resellers, Suppliers and Affiliates regarding any copyrights and/or viewing choices and/or options accessible with the TV PLUS product or Systems. For further information you may visit our website and consult our Terms &  Conditions document at www.XACTTV.ca</label>
+        <autoscroll delay="5000" time="2500" repeat="10000">true</autoscroll>
+				<pagecontrol>60</pagecontrol>
+      </control>
+			<control type="button" id="9000" description="Accept">
+        <centerleft>720</centerleft>
+        <bottom>9</bottom>
+        <width>420</width>
+        <height>60</height>
+        <label>ACCEPT & CONTINUE</label>
+        <textcolor>Red</textcolor>
+        <focusedcolor>Red</focusedcolor>
+    		<selectedcolor>Red</selectedcolor>
+				<align>center</align>
+				<pulseonselect>true</pulseonselect>
+				<onright>9001</onright>
+				<onleft>9001</onleft>
+				<onclick>Skin.ResetSettings</onclick>
+				<onclick>Skin.ToggleSetting(Welcome.Accepted)</onclick>
+        <onclick>Close</onclick>
+		  </control>
+			<control type="button" id="9001" description="Decline">
+        <centerleft>1200</centerleft>
+        <bottom>9</bottom>
+        <width>420</width>
+        <height>60</height>
+        <label>REFUSE & EXIT</label>
+        <textcolor>Red</textcolor>
+        <focusedcolor>Red</focusedcolor>
+    		<selectedcolor>Red</selectedcolor>
+				<align>center</align>
+				<pulseonselect>true</pulseonselect>
+				<onright>9000</onright>
+				<onleft>9000</onleft>
+				<onclick>Skin.ResetSettings</onclick>
+				<onclick>XBMC.Quit()</onclick>
+		  </control>
+    </control>
+		<!--<control type="scrollbar" id="60">
+        <animation effect="slide" start="0,0" end="-6,0" time="150">Focus</animation>
+        <animation effect="slide" start="-6,0" end="0,0" time="300">UnFocus</animation>
+        <posx>45r</posx>
+        <posy>210</posy>
+        <width>36</width>
+        <height>270</height>
+        <texturesliderbackground>-</texturesliderbackground>
+        <texturesliderbar>-</texturesliderbar>
+        <texturesliderbarfocus>-</texturesliderbarfocus>
+        <textureslidernib border="18">OSD/ScrollbarNibNF.png</textureslidernib>
+        <textureslidernibfocus border="18">OSD/ScrollbarNibFO.png</textureslidernibfocus>
+        <showonepage>false</showonepage>
+        <orientation>vertical</orientation>
+        <onleft>9000</onleft>
+        <onright>9000</onright>
+      </control>-->
+  </controls>
+</window>

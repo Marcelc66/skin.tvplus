@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="1123">
+  <defaultcontrol always="true">9000</defaultcontrol>
+  <controls>
+    <control type="group" description="All dialog content">
+      <include>OpenClose</include>
+      <!--<control type="multiimage">
+      <include>Dimensions_Fullscreen</include>
+      <timeperimage>999000</timeperimage>
+      <fadetime>400</fadetime>
+      <imagepath background="true">special://skin/news</imagepath>
+      <randomize>false</randomize>
+      <aspectratio aligny="top">scale</aspectratio>
+    </control>-->
+      <control type="list" id="9000">
+        <posx>0</posx>
+        <posy>0</posy>
+        <width>1920</width>
+        <height>1080</height>
+        <onleft>noop</onleft>
+        <onright>noop</onright>
+        <orientation>horizontal</orientation>
+        <preloaditems>4</preloaditems>
+        <itemlayout height="1080" width="1920">
+          <control type="image">
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1920</width>
+            <height>1080</height>
+            <texture background="true">$INFO[ListItem.Icon]</texture>
+          </control>
+        </itemlayout>
+        <focusedlayout height="1080" width="1920">
+          <control type="image">
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1920</width>
+            <height>1080</height>
+            <texture background="true">$INFO[ListItem.Icon]</texture>
+          </control>
+        </focusedlayout>
+        <content>
+          <item id="1" description="1">
+            <label>X ACT - U</label>
+            <thumb>special://skin/news/01.jpg</thumb>
+            <onclick>-</onclick>
+          </item>
+          <item id="2" description="2">
+            <label>X ACT - U</label>
+            <thumb>special://skin/news/02.jpg</thumb>
+            <onclick>-</onclick>
+          </item>
+          <item id="3" description="3">
+            <label>X ACT - U</label>
+            <thumb>special://skin/news/03.jpg</thumb>
+            <onclick>-</onclick>
+          </item>
+          <item id="4" description="4">
+            <label>X ACT - U</label>
+            <thumb>special://skin/news/04.jpg</thumb>
+            <onclick>-</onclick>
+          </item>
+          <item id="5" description="5">
+            <label>X ACT - U</label>
+            <thumb>special://skin/news/05.jpg</thumb>
+            <onclick>-</onclick>
+          </item>
+          <item id="6" description="6">
+            <label>X ACT - U</label>
+            <thumb>special://skin/news/06.jpg</thumb>
+            <onclick>-</onclick>
+          </item>
+          <item id="7" description="7">
+            <label>X ACT - U</label>
+            <thumb>special://skin/news/07.jpg</thumb>
+            <onclick>-</onclick>
+          </item>
+        </content>
+      </control>
+			<control type="image">
+        <posx>0</posx>
+        <centertop>884</centertop>
+        <width>1920</width>
+        <height>171</height>
+        <aspectratio>stretch</aspectratio>
+        <!--<texture border="0,30,0,30">OSD/OSDBackground.png</texture>
+				<colordiffuse>63FFFFFF</colordiffuse>-->
+				<texture>img/BlackDotST.png</texture>
+      </control>
+			<control type="textbox" description="ContactInfo">
+        <left>45</left>
+        <centertop>896</centertop>
+        <width>1800</width>
+        <height>171</height>
+        <align>justify</align>
+				<font>SupportSmall</font>
+				<shadowcolor>-</shadowcolor>
+        <label>[COLOR=Red][B]X ACT TV - Proud & Exclusive Makers of TV PLUS “WICKED” Media Streaming Systems[/B][/COLOR][CR]email:Sales@xacttv.ca[CR]Toll Free: 1-855-445-6060[CR]Visit us at: www.XACTTV.ca</label>
+        <autoscroll>false</autoscroll>
+      </control>
+			<control type="image" description="Left">
+            <visible>Container(9000).HasPrevious</visible>
+						<animation effect="slide" start="0,0" end="150,0" time="0" delay="0" reversible="true" condition="!Container(9000).HasNext">Conditional</animation>
+						<right>180</right>
+            <centertop>884</centertop>
+            <width>90</width>
+            <height>90</height>
+            <texture>news/LeftArrow.png</texture>
+          </control>
+							<control type="image" description="Right">
+            <visible>Container(9000).HasNext</visible>
+						<right>30</right>
+            <centertop>884</centertop>
+            <width>90</width>
+            <height>90</height>
+            <texture>news/RightArrow.png</texture>
+          </control>
+    </control>
+  </controls>
+</window>

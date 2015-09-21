@@ -1,0 +1,15 @@
+<advancedsettings>
+ <packagefoldersize>20</packagefoldersize> <!-- The amount in megabytes of packages saved from previous add-on installs. -->
+ <imageres>720</imageres>
+ <fanartres>1080</fanartres>
+</advancedsettings>
+
+
+-HOLD
+ <pathsubstitution>
+  <substitute>
+    <from>special://profile/Thumbnails/</from>
+    <to>/storage/emulated/0/data/X ACT/TV PLUS/Thumbnails</to>
+  </substitute>
+ </pathsubstitution>
+-

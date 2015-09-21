@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="0">
+  <defaultcontrol always="true">300</defaultcontrol>
+  <!--<onload>ActivateWindow(1122)</onload>-->
+  <onload condition="!Skin.HasSetting(Welcome.Accepted)">ActivateWindow(1122)</onload>
+  <controls>
+    <include condition="Skin.HasSetting(Home_DefaultBG)">Default_Art</include>
+    <control type="multiimage">
+      <visible>!Player.HasVideo</visible>
+      <include>Dimensions_Fullscreen</include>
+      <timeperimage>12000</timeperimage>
+      <fadetime>400</fadetime>
+      <imagepath background="true">$INFO[Container(300).ListItem.Icon]</imagepath>
+      <randomize>true</randomize>
+      <aspectratio aligny="top">scale</aspectratio>
+    </control>
+    <control type="visualisation">
+      <visible>Player.HasAudio</visible>
+      <posx>0</posx>
+      <posy>0</posy>
+      <width>1920</width>
+      <height>1080</height>
+    </control>
+    <control type="videowindow">
+      <visible>Player.HasVideo</visible>
+      <posx>0</posx>
+      <posy>0</posy>
+      <width>1920</width>
+      <height>1080</height>
+    </control>
+    <control type="group" description="Content">
+      <include>OpenClose</include>
+      <animation effect="fade" start="0" end="100" time="1000" condition="Window.Previous(Startup.xml)">Conditional</animation>
+      <animation effect="fade" start="0" end="100" time="200" condition="!Window.Previous(Startup.xml)">Conditional</animation>
+      <control type="group" description="HORIZONTAL HOME">
+        <control type="group">
+          <posy>150</posy>
+          <control type="group" description="Furniture">
+            <control type="image" description="Top glass border">
+              <animation effect="zoom" start="100,100" end="100,50" time="100" condition="true">Conditional</animation>
+              <posx>0</posx>
+              <posy>645</posy>
+              <width>1920</width>
+              <height>87</height>
+              <texture border="0,0,0,12">home/NavbarGlass.png</texture>
+            </control>
+            <control type="image" description="Bottom glass border">
+              <animation effect="zoom" start="100,100" end="100,50" time="100" condition="!IntegerGreaterThan(Container(9001).NumItems,0)">Conditional</animation>
+              <posx>0</posx>
+              <posy>789</posy>
+              <width>1920</width>
+              <height>87</height>
+              <texture flipy="true" border="0,10,0,0">home/NavbarGlass2.png</texture>
+            </control>
+            <control type="image">
+              <posx>0</posx>
+              <posy>630</posy>
+              <width>1920</width>
+              <height>225</height>
+              <texture>home/HomeMenuBack3.png</texture>
+            </control>
+          </control>
+          <control type="fixedlist" id="300" description="Main Bar">
+            <animation effect="fade" time="200" start="100" end="25" reversible="true" condition="!Control.HasFocus(300)">Conditional</animation>
+            <posx>-338</posx>
+            <posy>689</posy>
+            <width>3069</width>
+            <height>225</height>
+            <onleft>noop</onleft>
+            <onright>noop</onright>
+            <ondown>9001</ondown>
+            <pagecontrol>-</pagecontrol>
+            <focusposition>2</focusposition>
+            <movement>1</movement>
+            <preloaditems>4</preloaditems>
+            <orientation>horizontal</orientation>
+            <itemlayout height="70" width="519">
+              <control type="label">
+                <posx>260</posx>
+                <posy>0</posy>
+                <width>519</width>
+                <textcolor>Grey</textcolor>
+                <shadowcolor>ShadowDark</shadowcolor>
+                <height>70</height>
+                <align>center</align>
+                <aligny>top</aligny>
+                <textoffsety>12</textoffsety>
+                <scroll>false</scroll>
+                <label>$INFO[ListItem.Label]</label>
+                <font>MainMenu</font>
+              </control>
+            </itemlayout>
+            <focusedlayout height="70" width="519">
+              <control type="label">
+                <posx>260</posx>
+                <posy>0</posy>
+                <width>519</width>
+                <!-- <textcolor>White2</textcolor> -->
+                <textcolor>Red</textcolor>
+                <shadowcolor>ShadowDark</shadowcolor>
+                <height>70</height>
+                <align>center</align>
+                <aligny>top</aligny>
+                <textoffsety>12</textoffsety>
+                <label>$INFO[ListItem.Label]</label>
+                <font>MainMenu</font>
+              </control>
+            </focusedlayout>
+            <content>
+              <item id="333" description="X ACT U">
+                <label>X ACT- U</label>
+                <thumb>special://skin/backgrounds/XACTU.jpg</thumb>
+                <onclick>ActivateWindow(1121)</onclick>
+              </item>
+              <item id="7" description="Favorites">
+                <visible>!Skin.HasSetting(Favourites.Hide)</visible>
+                <label>Favorites</label>
+                <thumb>special://skin/backgrounds/Favourites.jpg</thumb>
+                <onclick>ActivateWindow(Favourites)</onclick>
+              </item>
+              <item id="2222" description="Player">
+                <visible>Player.HasMedia</visible>
+                <label>Player</label>
+                <thumb></thumb>
+                <onclick>fullscreen</onclick>
+              </item>
+							<item id="2" description="TV Plus Addons">
+                <visible>!Skin.HasSetting(Addons.Hide)</visible>
+                <label>TV PLUS</label>
+                <thumb>special://skin/backgrounds/Addons.jpg</thumb>
+                <onclick>ActivateWindow(Videos,addons://sources/video/,return)</onclick>
+                <!--<onclick>ActivateWindow(1119)</onclick>-->
+              </item>
+              <item id="2000" description="News">
+                <label>NEWS</label>
+                <thumb>special://skin/news</thumb>
+                <onclick>ActivateWindow(1123)</onclick>
+              </item>
+              <item id="23" description="plus live">
+                <label>PLUS LIVE</label>
+                <thumb>special://skin/backgrounds/PlusLive.jpg</thumb>
+                <onclick>StartAndroidActivity(&quot;com.filmon.android.aff129327Xxr21&quot;)</onclick>
+              </item>
+              <item id="24" description="world live">
+                <label>World Live</label>
+                <thumb>special://skin/backgrounds/WorldLive.jpg</thumb>
+                <onclick>StartAndroidActivity(&quot;com.gsetech.worldtv&quot;)</onclick>
+              </item>
+              <item id="4" description="MyMovies">
+                <visible>Library.HasContent(Movies)</visible>
+                <label>20342</label>
+                <thumb>special://skin/backgrounds/Movies.jpg</thumb>
+                <onclick>$VAR[MovieEntryPoint]</onclick>
+              </item>
+              <item id="5" description="MyTV">
+                <visible>Library.HasContent(TVShows)</visible>
+                <label>20343</label>
+                <thumb>special://skin/backgrounds/TVShows.jpg</thumb>
+                <onclick>$VAR[TVEntryPoint]</onclick>
+              </item>
+              <item id="3" description="Videos">
+                <label>$LOCALIZE[3]</label>
+                <thumb>special://skin/backgrounds/Videos.jpg</thumb>
+                <onclick>ActivateWindow(Videos,sources://video/,return)</onclick>
+              </item>
+              <item id="1" description="Pictures">
+                <label>$LOCALIZE[1]</label>
+                <thumb>special://skin/backgrounds/Pictures.jpg</thumb>
+                <onclick>ActivateWindow(Pictures,addons://sources/image/,return)</onclick>
+              </item>
+              <item id="6" description="Music">
+                <visible>!Skin.HasSetting(Music.Hide)</visible>
+                <label>$LOCALIZE[2]</label>
+                <thumb>special://skin/backgrounds/Music.jpg</thumb>
+                <onclick>ActivateWindow(MusicFiles,addons://sources/audio/,return)</onclick>
+              </item>
+              <item id="21" description="RadioTunes">
+                <label>RadioTunes</label>
+                <thumb>special://skin/backgrounds/RadioTunes.jpg</thumb>
+                <onclick>ActivateWindow(10501,&quot;plugin://plugin.audio.radiotunes.com/&quot;,return)</onclick>
+              </item>
+              <item id="22" description="TuneIn">
+                <label>TuneIn</label>
+                <thumb>special://skin/backgrounds/TuneIn.jpg</thumb>
+                <onclick>ActivateWindow(10501,&quot;plugin://plugin.audio.tuneinradio/&quot;,return)</onclick>
+              </item>
+              <item id="300" description="PVR">
+                <visible>System.GetBool(pvrmanager.enabled)</visible>
+                <label>$LOCALIZE[31500]</label>
+                <thumb>special://skin/backgrounds/Pvr.jpg</thumb>
+                <onclick>ActivateWindowAndFocus(PVR)</onclick>
+              </item>
+              <item id="15" description="Programs">
+                <visible>Skin.HasSetting(SysAdmin)</visible>
+                <label>$LOCALIZE[0]</label>
+                <onclick condition="!System.Platform.Android">ActivateWindow(Programs,Addons,return)</onclick>
+                <onclick condition="System.Platform.Android">ActivateWindow(Programs)</onclick>
+                <thumb>special://skin/backgrounds/Programs.jpg</thumb>
+              </item>
+              <item id="10" description="Settings">
+                <visible>Skin.HasSetting(SysAdmin)</visible>
+                <label>$LOCALIZE[5]</label>
+                <thumb>special://skin/backgrounds/Settings.jpg</thumb>
+                <onclick>ActivateWindow(Settings)</onclick>
+              </item>
+              <item id="11" description="Quit">
+                <label>13009</label>
+                <thumb>special://skin/backgrounds/Quit.jpg</thumb>
+                <onclick>$VAR[QuitAction]</onclick>
+              </item>
+            </content>
+          </control>
+          <control type="fixedlist" id="9001" description="Submenu Bar">
+            <animation effect="slide" start="0,0" end="-128,0" time="0" condition="StringCompare(Container(9001).NumItems,2) | StringCompare(Container(9001).NumItems,4) | StringCompare(Container(9001).NumItems,6)">conditional</animation>
+            <animation effect="fade" time="200" start="100" end="100" reversible="true" condition="!Control.HasFocus(9001)">Conditional</animation>
+            <include>VisibleFadeEffect</include>
+            <posx>64</posx>
+            <posy>785</posy>
+            <height>50</height>
+            <width>1792</width>
+            <onleft>9001</onleft>
+            <onright>9001</onright>
+            <viewtype>list</viewtype>
+            <orientation>horizontal</orientation>
+            <focusposition>3</focusposition>
+            <movement>3</movement>
+            <onup>300</onup>
+            <onback>SetFocus(300)</onback>
+            <ondown>700</ondown>
+            <itemlayout width="256" height="50">
+              <control type="label">
+                <posx>129</posx>
+                <posy>1</posy>
+                <height>50</height>
+                <width>240</width>
+                <align>center</align>
+                <aligny>center</aligny>
+                <font>Sublist</font>
+                <scroll>false</scroll>
+                <label>$INFO[ListItem.Label]</label>
+                <textcolor>Black</textcolor>
+                <shadowcolor>-</shadowcolor>
+              </control>
+              <control type="label">
+                <posx>128</posx>
+                <posy>0</posy>
+                <height>50</height>
+                <width>240</width>
+                <align>center</align>
+                <aligny>center</aligny>
+                <font>Sublist</font>
+                <scroll>false</scroll>
+                <label>$INFO[ListItem.Label]</label>
+                <textcolor>Sublist</textcolor>
+                <shadowcolor>-</shadowcolor>
+              </control>
+            </itemlayout>
+            <focusedlayout width="256" height="50">
+              <control type="label">
+                <posx>129</posx>
+                <posy>1</posy>
+                <height>50</height>
+                <width>240</width>
+                <align>center</align>
+                <aligny>center</aligny>
+                <font>Sublist</font>
+                <label>$INFO[ListItem.Label]</label>
+                <textcolor>Black</textcolor>
+                <shadowcolor>-</shadowcolor>
+              </control>
+              <control type="label">
+                <visible>!Control.HasFocus(9001)</visible>
+                <posx>128</posx>
+                <posy>0</posy>
+                <height>50</height>
+                <width>240</width>
+                <align>center</align>
+                <aligny>center</aligny>
+                <font>Sublist</font>
+                <label>$INFO[ListItem.Label]</label>
+                <textcolor>Sublist</textcolor>
+                <shadowcolor>-</shadowcolor>
+              </control>
+              <control type="label">
+                <visible>Control.HasFocus(9001)</visible>
+                <posx>128</posx>
+                <posy>0</posy>
+                <height>50</height>
+                <width>240</width>
+                <align>center</align>
+                <aligny>center</aligny>
+                <font>Sublist</font>
+                <label>$INFO[ListItem.Label]</label>
+                <textcolor>Red</textcolor>
+                <shadowcolor>-</shadowcolor>
+              </control>
+            </focusedlayout>
+            <content>
+              <item id="6" description="MyTV">
+                <visible>Container(300).HasFocus(5)</visible>
+                <label>$LOCALIZE[136]</label>
+                <onclick>ActivateWindow(Videos,playlists,return)</onclick>
+              </item>
+              <item id="7" description="RA TV">
+                <visible>Container(300).HasFocus(5)</visible>
+                <label>$LOCALIZE[575]</label>
+                <onclick>ActivateWindow(Videos,"library://video/inprogressshows.xml/",return)</onclick>
+              </item>
+              <item id="8" description="RA TV">
+                <visible>Container(300).HasFocus(5)</visible>
+                <label>$LOCALIZE[31020]</label>
+                <onclick>ActivateWindow(VideoLibrary,RecentlyAddedEpisodes,return)</onclick>
+              </item>
+              <item id="9" description="Library">
+                <visible>Container(300).HasFocus(5)</visible>
+                <label>$LOCALIZE[1024]</label>
+                <onclick>ActivateWindow(Videolibrary,root)</onclick>
+              </item>
+              <item id="10" description="Search">
+                <visible>Container(300).HasFocus(5)</visible>
+                <label>$LOCALIZE[137]</label>
+                <onclick>ActivateWindow(VideoLibrary)</onclick>
+                <onclick>SendClick(8)</onclick>
+              </item>
+              <item id="11" description="MyMovies">
+                <visible>Container(300).HasFocus(4) + !Skin.HasSetting(Movies1)</visible>
+                <label>$LOCALIZE[136]</label>
+                <onclick>ActivateWindow(Videos,playlists,return)</onclick>
+              </item>
+              <item id="11" description="MyMovies">
+                <visible>Container(300).HasFocus(4) + !Skin.HasSetting(Movies1)</visible>
+                <label>$LOCALIZE[135]</label>
+                <onclick>ActivateWindow(Videos,Moviegenres,return)</onclick>
+              </item>
+              <item id="12" description="RA Movies">
+                <visible>Container(300).HasFocus(4) + !Skin.HasSetting(Movies2)</visible>
+                <label>$LOCALIZE[20434]</label>
+                <onclick>ActivateWindow(Videos,Moviesets,return)</onclick>
+              </item>
+              <item id="13" description="RA Movies">
+                <visible>Container(300).HasFocus(4) + !Skin.HasSetting(Movies2)</visible>
+                <label>$LOCALIZE[31020]</label>
+                <onclick>ActivateWindow(Videos,RecentlyAddedMovies,return)</onclick>
+              </item>
+              <item id="14" description="RA Movies">
+                <visible>Container(300).HasFocus(4) + !Skin.HasSetting(Movies2)</visible>
+                <label>$LOCALIZE[20459]</label>
+                <onclick>ActivateWindow(Videos,MovieTags,return)</onclick>
+              </item>
+              <item id="15" description="Library">
+                <visible>Container(300).HasFocus(4) + !Skin.HasSetting(Movies4)</visible>
+                <label>$LOCALIZE[14022]</label>
+                <onclick>ActivateWindow(Videolibrary,root)</onclick>
+              </item>
+              <item id="16" description="Search">
+                <visible>Container(300).HasFocus(4) + !Skin.HasSetting(Movies5)</visible>
+                <label>$LOCALIZE[137]</label>
+                <onclick>ActivateWindow(VideoLibrary)</onclick>
+                <onclick>SendClick(8)</onclick>
+              </item>
+              <item id="25" description="Files">
+                <visible>Container(300).HasFocus(6) + !Skin.HasSetting(Music4)</visible>
+                <label>$LOCALIZE[744]</label>
+                <onclick>ActivateWindow(MusicFiles,root,return)</onclick>
+              </item>
+              <item id="26" description="Files">
+                <visible>Container(300).HasFocus(1)</visible>
+                <label>$LOCALIZE[744]</label>
+                <onclick>ActivateWindow(Pictures,root,return)</onclick>
+              </item>
+              <item id="27" description="Master mode button">
+                <visible>Container(300).HasFocus(8)</visible>
+                <visible>System.HasLocks + System.IsMaster</visible>
+                <label>$LOCALIZE[12332]</label>
+                <onclick>xbmc.mastermode</onclick>
+              </item>
+              <item id="28" description="Master mode button">
+                <visible>Container(300).HasFocus(8)</visible>
+                <visible>System.HasLocks + !System.IsMaster</visible>
+                <label>$LOCALIZE[12333]</label>
+                <onclick>xbmc.mastermode</onclick>
+              </item>
+              <item id="50" description="Reload skin">
+                <visible>Container(300).HasFocus(10)</visible>
+                <label>$LOCALIZE[20183]</label>
+                <onclick>XBMC.ReloadSkin()</onclick>
+              </item>
+              <item id="100" description="Tv Channels">
+                <visible>Container(300).HasFocus(300)</visible>
+                <label>19023</label>
+                <onclick>ActivateWindowAndFocus(PVR, 32, 0, 11, 0)</onclick>
+              </item>
+              <item id="101" description="Radio Channels">
+                <visible>Container(300).HasFocus(300)</visible>
+                <label>19024</label>
+                <onclick>ActivateWindowAndFocus(PVR, 33, 0, 12, 0)</onclick>
+              </item>
+              <item id="102" description="EPG Timeline">
+                <visible>Container(300).HasFocus(300)</visible>
+                <label>$LOCALIZE[19069]</label>
+                <onclick>ActivateWindowAndFocus(PVR, 31,0, 10,1)</onclick>
+              </item>
+              <item id="103" description="Recordings">
+                <visible>Container(300).HasFocus(300)</visible>
+                <label>19163</label>
+                <onclick>ActivateWindowAndFocus(PVR, 34, 0, 13, 0)</onclick>
+              </item>
+              <item id="104" description="Timer">
+                <visible>Container(300).HasFocus(300)</visible>
+                <label>19040</label>
+                <onclick>ActivateWindowAndFocus(PVR, 35, 0, 14, 0)</onclick>
+              </item>
+            </content>
+          </control>
+        </control>
+      </control>
+      <control type="group" description="RSS">
+        <visible>system.getbool(lookandfeel.enablerssfeeds)</visible>
+        <control type="image">
+          <visible>!Skin.HasSetting(VerticalHome)</visible>
+          <posx>0</posx>
+          <posy>990</posy>
+          <width>1180</width>
+          <height>90</height>
+          <texture flipx="true" border="100,0,0,0">common/TimePanel.png</texture>
+        </control>
+        <control type="rss" description="RSS Feed">
+          <posx>21</posx>
+          <posy>1040</posy>
+          <width>960</width>
+          <height>90</height>
+          <font>rss</font>
+          <urlset>1</urlset>
+          <shadowcolor>ShadowLite</shadowcolor>
+          <titlecolor>White2</titlecolor>
+          <headlinecolor>White2</headlinecolor>
+          <textcolor>Red</textcolor>
+        </control>
+      </control>
+      <include>Time</include>
+    </control>
+  </controls>
+</window>
