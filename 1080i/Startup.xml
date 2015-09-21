@@ -5,7 +5,7 @@
   <controls>
     <control type="button" id="10">
       <include>HiddenButton</include>
-			<onfocus>ReplaceWindow($INFO[System.StartupWindow])</onfocus>
+			<onfocus>ReplaceWindow(1136)</onfocus>
     </control>
    <include>Default_Art</include>
   </controls>

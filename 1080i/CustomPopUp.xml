@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="1136">
+  <defaultcontrol always="true">9000</defaultcontrol>
+  <onload>Skin.Reset(PopUpAccepted)</onload>
+  <controls>
+    <control type="group" description="All dialog content">
+      <control type="image" description="Top logo">
+      <centerleft>960</centerleft>
+        <top>0</top>
+        <width>511</width>
+        <height>142</height>
+				<align>top</align>
+      <texture>welcome/XACTTVLogoAstera.png</texture>
+    </control>
+		<control type="image" description="Bottom logo">
+      <centerleft>960</centerleft>
+        <bottom>129</bottom>
+        <width>59</width>
+        <height>48</height>
+				<align>top</align>
+      <texture>welcome/TVPlusDevilLogo.png</texture>
+    </control>
+		<control type="label" description="Bottom logo TXT">
+        <centerleft>960</centerleft>
+        <bottom>93</bottom>
+        <width>1920</width>
+        <height>30</height>
+        <label>Mr. “WICKED” Says</label>
+        <align>center</align>
+        <aligny>center</aligny>
+				<font>Support</font>
+		  </control>
+			<control type="label" description="Dialog heading">
+        <centerleft>960</centerleft>
+        <top>142</top>
+        <width>1920</width>
+        <height>50</height>
+        <label>[B]IMPORTANT CONSUMER INFORMATION[/B]</label>
+        <align>center</align>
+        <aligny>center</aligny>
+				<textcolor>Red</textcolor>
+      </control>
+      <control type="textbox" id="9" description="Labels">
+        <centerleft>960</centerleft>
+        <top>201</top>
+        <width>1800</width>
+        <height>660</height>
+        <align>justify</align>
+				<font>SupportSmall</font>
+				<shadowcolor>-</shadowcolor>
+        <label>YOU NEED TO UPDATE - WHY YOU NEED TO UPDATE BLAH BLAH BLAH</label>
+        <autoscroll delay="5000" time="2500" repeat="10000">true</autoscroll>
+				<pagecontrol>60</pagecontrol>
+      </control>
+			<control type="button" id="9000" description="Accept">
+        <centerleft>50%</centerleft>
+        <bottom>9</bottom>
+        <width>420</width>
+        <height>60</height>
+        <label>CONTINUE</label>
+        <textcolor>Red</textcolor>
+        <focusedcolor>Red</focusedcolor>
+    		<selectedcolor>Red</selectedcolor>
+				<align>center</align>
+				<pulseonselect>true</pulseonselect>
+				<onright>9001</onright>
+				<onleft>9001</onleft>
+				<onclick>Skin.SetBool(PopUpAccepted)</onclick>
+        <onclick>Close</onclick>
+		  </control>
+			
+    </control>
+		<!--<control type="scrollbar" id="60">
+        <animation effect="slide" start="0,0" end="-6,0" time="150">Focus</animation>
+        <animation effect="slide" start="-6,0" end="0,0" time="300">UnFocus</animation>
+        <posx>45r</posx>
+        <posy>210</posy>
+        <width>36</width>
+        <height>270</height>
+        <texturesliderbackground>-</texturesliderbackground>
+        <texturesliderbar>-</texturesliderbar>
+        <texturesliderbarfocus>-</texturesliderbarfocus>
+        <textureslidernib border="18">OSD/ScrollbarNibNF.png</textureslidernib>
+        <textureslidernibfocus border="18">OSD/ScrollbarNibFO.png</textureslidernibfocus>
+        <showonepage>false</showonepage>
+        <orientation>vertical</orientation>
+        <onleft>9000</onleft>
+        <onright>9000</onright>
+      </control>-->
+  </controls>
+</window>
